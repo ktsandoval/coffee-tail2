@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATEZ Coffee | Iniciar Sesión</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matez: {
+                            black: "#100b08",
+                            dark: "#18100d",
+                            brown: "#211612",
+                            gold: "#c39450",
+                            cream: "#ead9bd"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ["Georgia", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-matez-black text-white">
+
+<!-- NAVBAR -->
+<header class="bg-matez-black border-b border-white/10 relative z-50">
+
+    <nav class="max-w-[1400px] mx-auto px-6 md:px-10 py-5
+                flex items-center justify-between">
+
+        <!-- LOGO -->
+        <a href="../index.html" class="leading-none">
+            <span class="block font-serif text-2xl text-matez-cream">
+                MATEZ
+            </span>
+            <span class="block text-[9px] tracking-[0.3em]
+                         text-matez-gold mt-1">
+                COFFEE
+            </span>
+        </a>
+
+        <!-- MENU DESKTOP -->
+        <div class="hidden md:flex items-center gap-9
+                    text-sm text-gray-400">
+
+            <a href="../index.html#inicio"
+               class="hover:text-matez-gold">Inicio</a>
+
+            <a href="../index.html#nosotros"
+               class="hover:text-matez-gold">Nosotros</a>
+
+            <a href="../index.html#tienda"
+               class="hover:text-matez-gold">Tienda</a>
+
+            <a href="../index.html#proceso"
+               class="hover:text-matez-gold">Proceso</a>
+        </div>
+
+        <!-- ACCIONES DESKTOP -->
+        <div class="hidden sm:flex items-center gap-5">
+
+            <a href="index.html"
+               class="text-sm text-gray-300 hover:text-white">
+                Iniciar Sesión
+            </a>
+
+            <a href="../registro/index.html"
+               class="bg-matez-gold hover:bg-[#ad7d3d]
+                      px-5 py-2.5 rounded-md
+                      text-sm font-semibold transition">
+                Crear Cuenta
+            </a>
+        </div>
+
+        <!-- BOTON HAMBURGUESA -->
+        <button id="menu-btn"
+                type="button"
+                class="md:hidden text-matez-cream p-2"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu-movil">
+
+            <svg id="icono-menu"
+                 xmlns="http://www.w3.org/2000/svg"
+                 class="w-7 h-7"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+
+    </nav>
+
+    <!-- MENU MOVIL -->
+    <div id="menu-movil"
+         class="hidden md:hidden bg-matez-black
+                border-t border-white/10 px-6 py-5">
+
+        <div class="flex flex-col gap-5 text-sm text-gray-300">
+
+            <a href="../index.html#inicio"
+               class="enlace-movil hover:text-matez-gold">
+                Inicio
+            </a>
+
+            <a href="../index.html#nosotros"
+               class="enlace-movil hover:text-matez-gold">
+                Nosotros
+            </a>
+
+            <a href="../index.html#tienda"
+               class="enlace-movil hover:text-matez-gold">
+                Tienda
+            </a>
+
+            <a href="../index.html#proceso"
+               class="enlace-movil hover:text-matez-gold">
+                Proceso
+            </a>
+
+            <a href="index.html"
+               class="enlace-movil hover:text-matez-gold">
+                Iniciar Sesión
+            </a>
+
+            <a href="../registro/index.html"
+               class="enlace-movil bg-matez-gold text-white
+                      text-center rounded-md px-4 py-3">
+                Crear Cuenta
+            </a>
+
+        </div>
+    </div>
+
+</header>
+
+
+    <!-- INICIO DE SESIÓN -->
+    <main>
+        <section class="max-w-[1400px] mx-auto
+                        grid grid-cols-1 lg:grid-cols-2">
+
+            <!-- FORMULARIO -->
+            <div class="flex items-center justify-center
+                        px-6 sm:px-10 lg:px-16
+                        py-16 lg:py-20
+                        min-h-[560px] lg:min-h-[690px]
+                        order-2 lg:order-1">
+
+                <div class="w-full max-w-xl">
+
+                    <h1 class="font-serif text-3xl sm:text-4xl
+                               md:text-5xl text-matez-cream">
+                        ¡Bienvenido de vuelta!
+                    </h1>
+
+                    <p class="text-gray-400 text-sm sm:text-base
+                              leading-6 mt-4 mb-8">
+                        Ingresa tus datos para continuar tu viaje
+                        por el café de especialidad.
+                    </p>
+
+                    <form id="loginForm" class="space-y-4">
+
+                        <!-- CORREO -->
+                        <div class="relative">
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2 text-gray-500">
+                                ✉
+                            </span>
+
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico"
+                                autocomplete="email" required class="w-full rounded-full
+                                       bg-matez-brown
+                                       border border-white/10
+                                       focus:border-matez-gold
+                                       outline-none
+                                       py-3.5 pl-12 pr-5
+                                       text-sm text-white
+                                       placeholder-gray-400
+                                       transition">
+                        </div>
+
+                        <!-- CONTRASEÑA -->
+                        <div class="relative">
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2 text-gray-500">
+                                🔒
+                            </span>
+
+                            <input type="password" id="password" name="password" placeholder="Contraseña"
+                                autocomplete="current-password" required class="w-full rounded-full
+                                       bg-matez-brown
+                                       border border-white/10
+                                       focus:border-matez-gold
+                                       outline-none
+                                       py-3.5 pl-12 pr-12
+                                       text-sm text-white
+                                       placeholder-gray-400
+                                       transition">
+
+                            <button type="button" id="togglePassword" aria-label="Mostrar contraseña" class="absolute right-5 top-1/2
+                                       -translate-y-1/2
+                                       text-gray-400 hover:text-matez-gold">
+                                Ver
+                            </button>
+                        </div>
+
+                        <!-- RECORDAR Y RECUPERAR -->
+                        <div class="flex flex-wrap items-center
+                                    justify-between gap-3 pt-3">
+
+                            <label class="flex items-center gap-2
+                                          text-xs text-gray-400">
+                                <input type="checkbox" id="remember" class="accent-[#c39450] w-4 h-4">
+                                Recordarme
+                            </label>
+
+                            <a href="recuperar.html" class="text-xs text-matez-gold
+                                      hover:underline">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </div>
+
+                        <!-- BOTÓN INGRESAR -->
+                        <button type="submit" class="w-full bg-matez-gold
+                                   hover:bg-[#ad7d3d]
+                                   text-white font-bold
+                                   py-4 sm:py-5 rounded-full
+                                   mt-5 transition duration-300">
+                            Ingresar
+                        </button>
+
+                        <!-- MENSAJE -->
+                        <p id="message" role="status" class="text-sm text-center" aria-live="polite"></p>
+
+                    </form>
+
+                    <!-- REGISTRO -->
+                    <p class="text-center text-sm text-gray-400 mt-5">
+                        ¿Nuevo en Matéz?
+
+                        <a href="registro.html" class="text-matez-gold font-semibold
+                                  hover:underline ml-1">
+                            Regístrate gratis
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+
+            <!-- IMAGEN DEL PRODUCTO -->
+            <div class="flex items-center justify-center
+                        px-6 sm:px-12 lg:px-16
+                        pt-10 lg:py-10
+                        order-1 lg:order-2">
+
+                <div class="w-full max-w-[420px]
+                            h-[300px] sm:h-[420px]
+                            lg:h-[620px]
+                            rounded-2xl overflow-hidden bg-black">
+
+                    <img src="../img/001.jpeg" alt="Bolsa de café Matéz Coffee"
+                        class="w-full h-full object-contain">
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-matez-black border-t border-white/10">
+
+        <div class="max-w-[1400px] mx-auto
+                    px-6 md:px-10 py-12 md:py-16">
+
+            <div class="grid grid-cols-2
+                        lg:grid-cols-4 gap-9 md:gap-12">
+
+                <!-- MARCA -->
+                <div class="col-span-2 lg:col-span-1">
+                    <h2 class="font-serif text-3xl text-matez-cream">
+                        MATÉZ
+                    </h2>
+
+                    <p class="text-matez-gold text-[10px]
+                              tracking-[0.3em] mt-1">
+                        COFFEE
+                    </p>
+
+                    <p class="text-gray-500 text-sm leading-6 mt-5 max-w-xs">
+                        100% Garzoneño · Tostado Premium.
+                        Llevando el aroma y alma de las mejores
+                        fincas cafeteras directamente a tu mesa.
+                    </p>
+                </div>
+
+                <!-- EXPLORA -->
+                <div>
+                    <h3 class="font-semibold text-sm mb-5">Explora</h3>
+                    <div class="space-y-3 text-sm text-gray-500">
+                        <a href="index.html#tienda" class="block hover:text-matez-gold">Nuestra Tienda</a>
+                        <a href="index.html#suscripcion" class="block hover:text-matez-gold">Suscripción</a>
+                        <a href="index.html#tienda" class="block hover:text-matez-gold">Cafés de Especialidad</a>
+                    </div>
+                </div>
+
+                <!-- COMPAÑÍA -->
+                <div>
+                    <h3 class="font-semibold text-sm mb-5">Compañía</h3>
+                    <div class="space-y-3 text-sm text-gray-500">
+                        <a href="index.html#nosotros" class="block hover:text-matez-gold">Sobre Nosotros</a>
+                        <a href="index.html#proceso" class="block hover:text-matez-gold">Fincas Aliadas</a>
+                        <a href="mailto:contacto@matezcoffee.com" class="block hover:text-matez-gold">Contacto</a>
+                    </div>
+                </div>
+
+                <!-- SOPORTE -->
+                <div>
+                    <h3 class="font-semibold text-sm mb-5">Soporte</h3>
+                    <div class="space-y-3 text-sm text-gray-500">
+                        <a href="#" class="block hover:text-matez-gold">Preguntas Frecuentes</a>
+                        <a href="#" class="block hover:text-matez-gold">Envíos & Devoluciones</a>
+                        <a href="#" class="block hover:text-matez-gold">Políticas de Privacidad</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="border-t border-white/10 mt-12 pt-7
+                        flex flex-col md:flex-row
+                        justify-between gap-5
+                        text-xs text-gray-500">
+
+                <p>
+                    © 2026 Matéz Coffee. Todos los derechos reservados.
+                    Cultivado con orgullo en Colombia.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-matez-gold">Instagram</a>
+                    <a href="#" class="hover:text-matez-gold">Facebook</a>
+                    <a href="#" class="hover:text-matez-gold">X / Twitter</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mostrar u ocultar contraseña
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function () {
+            const oculto = passwordInput.type === "password";
+
+            passwordInput.type = oculto ? "text" : "password";
+            togglePassword.textContent = oculto ? "Ocultar" : "Ver";
+            togglePassword.setAttribute(
+                "aria-label",
+                oculto ? "Ocultar contraseña" : "Mostrar contraseña"
+            );
+        });
+
+        // Validación básica del formulario
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = passwordInput.value;
+            const message = document.getElementById("message");
+
+            if (!email || !password) {
+                message.textContent = "Completa todos los campos.";
+                message.className = "text-sm text-center text-red-400";
+                return;
+            }
+
+            message.textContent =
+                "Diseño listo. Conecta el formulario con tu sistema de autenticación.";
+            message.className = "text-sm text-center text-matez-gold";
+        });
+        const menuBtn = document.getElementById("menu-btn");
+const menuMovil = document.getElementById("menu-movil");
+const iconoMenu = document.getElementById("icono-menu");
+
+menuBtn.addEventListener("click", function () {
+    const estaCerrado = menuMovil.classList.contains("hidden");
+
+    menuMovil.classList.toggle("hidden");
+
+    menuBtn.setAttribute("aria-expanded", String(estaCerrado));
+    menuBtn.setAttribute(
+        "aria-label",
+        estaCerrado ? "Cerrar menú" : "Abrir menú"
+    );
+
+    iconoMenu.innerHTML = estaCerrado
+        ? '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>'
+        : '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+});
+
+document.querySelectorAll(".enlace-movil").forEach(function (enlace) {
+    enlace.addEventListener("click", function () {
+        menuMovil.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Abrir menú");
+
+        iconoMenu.innerHTML =
+            '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+    });
+});
+
+window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+        menuMovil.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+    }
+});
+    </script>
+
+</body>
+
+</html>

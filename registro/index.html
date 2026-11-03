@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matez - Crear Cuenta</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matez: {
+                            black: "#0e0a08",
+                            dark: "#17100d",
+                            brown: "#211612",
+                            card: "#261a16",
+                            gold: "#c8944b",
+                            cream: "#ead9bd"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ["Georgia", "serif"],
+                        sans: ["Arial", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-matez-black text-white">
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <!-- NAVBAR -->
+    <header class="bg-matez-black border-b border-white/10 relative z-50">
+
+        <nav class="max-w-[1400px] mx-auto px-6 md:px-10 py-5
+                flex items-center justify-between">
+
+            <!-- LOGO -->
+            <a href="../index.html" class="leading-none">
+                <div class="font-serif text-2xl tracking-wide text-matez-cream">
+                    MATEZ
+                </div>
+
+                <div class="text-[9px] tracking-[0.3em] text-matez-gold mt-1">
+                    COFFEE
+                </div>
+            </a>
+
+            <!-- MENU DESKTOP -->
+            <div class="hidden md:flex items-center gap-10
+                    text-sm text-gray-400">
+
+                <a href="../index.html#inicio" class="hover:text-white transition">Inicio</a>
+
+                <a href="../index.html#nosotros" class="hover:text-white transition">Nosotros</a>
+
+                <a href="../index.html#tienda" class="hover:text-white transition">Tienda</a>
+
+                <a href="../index.html#proceso" class="hover:text-white transition">Proceso</a>
+            </div>
+
+            <!-- ACCIONES DESKTOP -->
+            <div class="hidden sm:flex items-center gap-5">
+
+                <a href="../iniciarsesion/index.html" class="text-sm text-gray-300 hover:text-white">
+                    Iniciar Sesión
+                </a>
+
+                <a href="index.html" class="bg-matez-gold hover:bg-[#b6813d]
+                      px-5 py-2.5 rounded-md
+                      text-sm font-semibold transition">
+                    Crear Cuenta
+                </a>
+            </div>
+
+            <!-- BOTON HAMBURGUESA -->
+            <button id="menu-btn" type="button" class="md:hidden text-matez-cream p-2" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="menu-movil">
+
+                <svg id="icono-menu" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </nav>
+
+        <!-- MENU MOVIL -->
+        <div id="menu-movil" class="hidden md:hidden bg-matez-black
+                border-t border-white/10 px-6 py-5">
+
+            <div class="flex flex-col gap-5 text-sm text-gray-300">
+
+                <a href="../index.html#inicio" class="enlace-movil hover:text-matez-gold">
+                    Inicio
+                </a>
+
+                <a href="../index.html#nosotros" class="enlace-movil hover:text-matez-gold">
+                    Nosotros
+                </a>
+
+                <a href="../index.html#tienda" class="enlace-movil hover:text-matez-gold">
+                    Tienda
+                </a>
+
+                <a href="../index.html#proceso" class="enlace-movil hover:text-matez-gold">
+                    Proceso
+                </a>
+
+                <a href="../iniciarsesion/index.html" class="enlace-movil hover:text-matez-gold">
+                    Iniciar Sesión
+                </a>
+
+                <a href="index.html" class="enlace-movil bg-matez-gold text-white
+                      text-center rounded-md px-4 py-3">
+                    Crear Cuenta
+                </a>
+
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         REGISTRO
+    ====================================================== -->
+
+    <main>
+
+        <section class="max-w-[1400px] mx-auto
+                        grid grid-cols-1 lg:grid-cols-2
+                        min-h-[650px]">
+
+
+            <!-- =================================================
+                 IMAGEN
+            ================================================== -->
+
+            <div class="relative min-h-[420px] lg:min-h-[700px]">
+
+                <img src="../img/001.jpeg" alt="Café colombiano" class="absolute inset-0 w-full h-full
+                           object-cover">
+
+                <!-- OSCURECER UN POCO LA IMAGEN -->
+                <div class="absolute inset-0
+                            bg-black/10">
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORMULARIO
+            ================================================== -->
+
+            <div class="bg-matez-black
+                        flex items-center
+                        px-6 sm:px-10 md:px-16
+                        py-16 lg:py-20">
+
+                <div class="w-full max-w-xl mx-auto">
+
+
+                    <!-- TITULO -->
+
+                    <h1 class="font-serif
+                               text-3xl sm:text-4xl
+                               md:text-5xl
+                               text-matez-cream">
+
+                        Crear Cuenta
+
+                    </h1>
+
+
+                    <p class="text-gray-400
+                              text-sm sm:text-base
+                              mt-4 mb-8">
+
+                        Únete a la familia Matez y recibe acceso
+                        prioritario a cosechas exclusivas.
+
+                    </p>
+
+
+
+                    <!-- FORMULARIO -->
+
+                    <form class="space-y-4">
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="relative">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-gray-600">
+                                👤
+                            </span>
+
+                            <input type="text" placeholder="Nombre Completo" required class="w-full
+                                       bg-matez-brown
+                                       border border-white/10
+                                       focus:border-matez-gold
+                                       outline-none
+                                       rounded-full
+                                       py-4
+                                       pl-12 pr-5
+                                       text-sm
+                                       text-white
+                                       placeholder-gray-500
+                                       transition">
+
+                        </div>
+
+
+
+                        <!-- CORREO -->
+
+                        <div class="relative">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-gray-600">
+                                ✉
+                            </span>
+
+                            <input type="email" placeholder="Correo Electrónico" required class="w-full
+                                       bg-matez-brown
+                                       border border-white/10
+                                       focus:border-matez-gold
+                                       outline-none
+                                       rounded-full
+                                       py-4
+                                       pl-12 pr-5
+                                       text-sm
+                                       text-white
+                                       placeholder-gray-500
+                                       transition">
+
+                        </div>
+
+
+
+                        <!-- CONTRASEÑA -->
+
+                        <div class="relative">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-gray-600">
+                                🔒
+                            </span>
+
+                            <input type="password" placeholder="Contraseña" required class="w-full
+                                       bg-matez-brown
+                                       border border-white/10
+                                       focus:border-matez-gold
+                                       outline-none
+                                       rounded-full
+                                       py-4
+                                       pl-12 pr-5
+                                       text-sm
+                                       text-white
+                                       placeholder-gray-500
+                                       transition">
+
+                        </div>
+
+
+
+                        <!-- TERMINOS -->
+
+                        <div class="flex items-start gap-3 pt-3">
+
+                            <input id="terminos" type="checkbox" required class="mt-1
+                                       w-4 h-4
+                                       accent-[#c8944b]
+                                       cursor-pointer">
+
+                            <label for="terminos" class="text-xs
+                                          leading-5
+                                          text-gray-400
+                                          cursor-pointer">
+
+                                Acepto los
+                                <a href="#" class="text-matez-gold
+                                          hover:underline">
+                                    Términos de Servicio
+                                </a>
+
+                                y la
+                                <a href="#" class="text-matez-gold
+                                          hover:underline">
+                                    Política de Privacidad
+                                </a>
+
+                                de Matez Coffee.
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- BOTON -->
+
+                        <button type="submit" class="w-full
+                                   bg-matez-gold
+                                   hover:bg-[#b6813d]
+                                   text-white
+                                   font-bold
+                                   py-5
+                                   rounded-full
+                                   mt-5
+                                   transition
+                                   duration-300
+                                   hover:scale-[1.01]">
+
+                            Registrarse
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- LOGIN -->
+
+                    <p class="text-center
+                              text-sm
+                              text-gray-500
+                              mt-5">
+
+                        ¿Ya tienes una cuenta?
+
+                        <a href="#" class="text-matez-gold
+                                  hover:underline
+                                  ml-1">
+
+                            Inicia Sesión
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="bg-matez-black
+                   border-t border-white/10">
+
+        <div class="max-w-[1400px] mx-auto
+                    px-6 md:px-10
+                    py-14 md:py-16">
+
+
+            <!-- CONTENIDO -->
+
+            <div class="grid
+                        grid-cols-1
+                        sm:grid-cols-2
+                        lg:grid-cols-4
+                        gap-10 md:gap-16">
+
+
+                <!-- MARCA -->
+
+                <div class="lg:col-span-1">
+
+                    <h2 class="font-serif
+                               text-3xl
+                               text-matez-cream">
+
+                        MATEZ
+
+                    </h2>
+
+                    <p class="text-matez-gold
+                              text-[10px]
+                              tracking-[0.3em]
+                              mt-2">
+
+                        COFFEE
+
+                    </p>
+
+                    <p class="text-gray-500
+                              text-sm
+                              leading-6
+                              mt-6
+                              max-w-xs">
+
+                        100% Garzoneño · Tostado Premium.
+                        Llevando el aroma y alma de las mejores
+                        fincas cafeteras directamente a tu mesa.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- EXPLORA -->
+
+                <div>
+
+                    <h3 class="font-semibold mb-5">
+                        Explora
+                    </h3>
+
+                    <div class="space-y-4
+                                text-sm
+                                text-gray-500">
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Nuestra Tienda
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Suscripción
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Cafés de Especialidad
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COMPAÑÍA -->
+
+                <div>
+
+                    <h3 class="font-semibold mb-5">
+                        Compañía
+                    </h3>
+
+                    <div class="space-y-4
+                                text-sm
+                                text-gray-500">
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Sobre Nosotros
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Fincas Aliadas
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Contacto
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SOPORTE -->
+
+                <div>
+
+                    <h3 class="font-semibold mb-5">
+                        Soporte
+                    </h3>
+
+                    <div class="space-y-4
+                                text-sm
+                                text-gray-500">
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Preguntas Frecuentes
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Envíos & Devoluciones
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Políticas de Privacidad
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COPYRIGHT
+            ================================================== -->
+
+            <div class="border-t
+                        border-white/10
+                        mt-12
+                        pt-7
+                        flex flex-col
+                        md:flex-row
+                        justify-between
+                        gap-5
+                        text-xs
+                        text-gray-600">
+
+                <p>
+                    © 2026 Matez Coffee.
+                    Todos los derechos reservados.
+                    Cultivado con orgullo en Colombia.
+                </p>
+
+
+                <div class="flex gap-5">
+
+                    <a href="#" class="hover:text-matez-gold">
+                        Instagram
+                    </a>
+
+                    <a href="#" class="hover:text-matez-gold">
+                        Facebook
+                    </a>
+
+                    <a href="#" class="hover:text-matez-gold">
+                        X / Twitter
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const menuMovil = document.getElementById("menu-movil");
+        const iconoMenu = document.getElementById("icono-menu");
+
+        menuBtn.addEventListener("click", function () {
+            const estaCerrado = menuMovil.classList.contains("hidden");
+
+            menuMovil.classList.toggle("hidden");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                String(estaCerrado)
+            );
+
+            menuBtn.setAttribute(
+                "aria-label",
+                estaCerrado ? "Cerrar menú" : "Abrir menú"
+            );
+
+            iconoMenu.innerHTML = estaCerrado
+                ? '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>'
+                : '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+        });
+
+        // Cerrar el menú al seleccionar una opción
+        document.querySelectorAll(".enlace-movil").forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menuMovil.classList.add("hidden");
+                menuBtn.setAttribute("aria-expanded", "false");
+                menuBtn.setAttribute("aria-label", "Abrir menú");
+
+                iconoMenu.innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+            });
+        });
+
+        // Cerrar el menú al cambiar a pantalla de escritorio
+        window.addEventListener("resize", function () {
+            if (window.innerWidth >= 768) {
+                menuMovil.classList.add("hidden");
+                menuBtn.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+

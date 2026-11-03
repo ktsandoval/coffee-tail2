@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MATEZ Coffee | Café de Especialidad</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matez: {
+                            black: "#100b08",
+                            dark: "#18100d",
+                            brown: "#291c17",
+                            card: "#30211b",
+                            gold: "#c89445",
+                            cream: "#ead9bd",
+                            text: "#f0dfc3"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ["Georgia", "serif"],
+                        sans: ["Arial", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        #inicio,
+        #nosotros,
+        #tienda,
+        #proceso {
+            scroll-margin-top: 90px;
+        }
+    </style>
+</head>
+
+<body class="bg-matez-black text-matez-text">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="bg-matez-black/95 border-b border-white/5 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-5 lg:px-10 py-4 flex items-center justify-between">
+
+            <!-- LOGO -->
+            <a href="#" class="text-center leading-none">
+                <span class="block font-serif text-xl tracking-widest">
+                    MATEZ
+                </span>
+                <span class="text-[8px] tracking-[0.35em] text-matez-gold">
+                    COFFEE
+                </span>
+            </a>
+            <!-- MENÚ DESKTOP -->
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="#inicio" class="hover:text-matez-gold transition">
+                    Inicio
+                </a>
+                <a href="#nosotros" class="hover:text-matez-gold transition">
+                    Nosotros
+                </a>
+                <a href="#tienda" class="hover:text-matez-gold transition">
+                    Tienda
+                </a>
+                <a href="#proceso" class="hover:text-matez-gold transition">
+                    Proceso
+                </a>
+            </div>
+
+            <!-- BOTONES DE ESCRITORIO -->
+            <div class="hidden md:flex items-center gap-3">
+
+                <a href="iniciarsesion/index.html" class="text-xs text-gray-400 hover:text-white transition">
+                    Iniciar sesión
+                </a>
+
+                <a href="registro/index.html"
+                    class="bg-matez-gold hover:bg-[#b78338] text-white text-xs font-semibold px-4 py-2 rounded-md transition">
+                    Crear cuenta
+                </a>
+
+            </div>
+
+            <!-- BOTÓN MENÚ HAMBURGUESA -->
+            <button id="menu-btn" type="button" class="md:hidden text-matez-text p-2" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="menu-movil">
+
+                <svg id="icono-menu" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- MENÚ MÓVIL -->
+        <div id="menu-movil" class="hidden md:hidden bg-matez-black
+            border-t border-white/10 px-6 py-5">
+
+            <div class="flex flex-col gap-5 text-sm text-gray-300">
+
+                <a href="#inicio" class="enlace-movil hover:text-matez-gold">Inicio</a>
+                <a href="#nosotros" class="enlace-movil hover:text-matez-gold">Nosotros</a>
+                <a href="#tienda" class="enlace-movil hover:text-matez-gold">Tienda</a>
+                <a href="#proceso" class="enlace-movil hover:text-matez-gold">Proceso</a>
+
+                <a href="iniciarsesion/index.html" class="enlace-movil hover:text-matez-gold">
+                    Iniciar Sesión
+                </a>
+
+                <a href="registro/index.html" class="enlace-movil bg-matez-gold text-white
+                  text-center rounded-md px-4 py-3">
+                    Crear Cuenta
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="relative min-h-[620px] lg:min-h-[1000px] flex items-center overflow-hidden">
+
+        <!-- FONDO -->
+        <div class="absolute inset-0">
+            <img src="img/fondoc.jpeg" alt="Café MATEZ" class="w-full h-full object-cover">
+
+            <div class="absolute inset-0 bg-gradient-to-r
+                        from-matez-black via-matez-black/80 to-matez-black/30">
+            </div>
+
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="relative max-w-7xl mx-auto w-full px-6 lg:px-10 py-20">
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- TEXTO -->
+                <div class="max-w-xl">
+
+                    <p class="text-matez-gold text-[10px] md:text-xs
+                              tracking-[0.3em] uppercase mb-5">
+                        Café colombiano · Tostado artesanal
+                    </p>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl
+                               leading-tight text-matez-cream">
+                        El sabor de un café
+                        <span class="block">auténtico</span>
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-sm md:text-base
+                              leading-7 max-w-lg">
+                        Cultivado a más de 1.900 metros sobre el corazón del Huila,
+                        Colombia. Nuestro grano pasa por un proceso totalmente
+                        artesanal para garantizar un cuerpo, aroma y sabor
+                        únicos en cada taza.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3 mt-8">
+
+                        <a href="#tienda" class="text-center bg-matez-gold hover:bg-[#b78338]
+                                  px-7 py-3 rounded-full text-sm font-semibold
+                                  text-white transition">
+                            Comprar Café Ahora
+                        </a>
+
+                        <a href="#nosotros" class="text-center border border-white/20
+                                  hover:border-matez-gold px-7 py-3
+                                  rounded-full text-sm transition">
+                            Nuestro Origen
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CARACTERÍSTICAS ================= -->
+    <section id="nosotros" class="bg-matez-dark py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="text-center mb-12">
+
+                <p class="text-matez-gold text-[10px] tracking-[0.3em] uppercase">
+                    ¿Por qué MATEZ?
+                </p>
+
+                <h2 class="font-serif text-2xl md:text-3xl mt-3">
+                    La Pureza de un Grano de Especialidad
+                </h2>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-5">
+
+                <!-- CARD -->
+                <div class="bg-matez-card rounded-lg p-7
+                            border border-white/5 hover:border-matez-gold/30
+                            transition">
+
+                    <div class="text-matez-gold text-2xl mb-5">
+                        ♧
+                    </div>
+
+                    <h3 class="font-serif text-lg mb-3">
+                        Origen Ético & Sostenible
+                    </h3>
+
+                    <p class="text-gray-400 text-xs leading-6">
+                        Trabajamos con productores que cultivan nuestro café
+                        respetando la tierra y las comunidades.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-matez-card rounded-lg p-7
+                            border border-white/5 hover:border-matez-gold/30
+                            transition">
+
+                    <div class="text-matez-gold text-2xl mb-5">
+                        ☕
+                    </div>
+
+                    <h3 class="font-serif text-lg mb-3">
+                        Tueste Controlado
+                    </h3>
+
+                    <p class="text-gray-400 text-xs leading-6">
+                        Cada lote es tostado cuidadosamente para conservar
+                        sus aromas, cuerpo y notas naturales.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-matez-card rounded-lg p-7
+                            border border-white/5 hover:border-matez-gold/30
+                            transition">
+
+                    <div class="text-matez-gold text-2xl mb-5">
+                        ✓
+                    </div>
+
+                    <h3 class="font-serif text-lg mb-3">
+                        Calidad Certificada
+                    </h3>
+
+                    <p class="text-gray-400 text-xs leading-6">
+                        Seleccionamos cada grano para ofrecer una experiencia
+                        consistente en cada taza.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= TIENDA ================= -->
+    <section id="tienda" class="bg-matez-black py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="flex flex-col sm:flex-row
+                        justify-between sm:items-end gap-4 mb-10">
+
+                <div>
+                    <p class="text-matez-gold text-[10px]
+                              tracking-[0.3em] uppercase">
+                        Nuestros cafés
+                    </p>
+
+                    <h2 class="font-serif text-2xl md:text-3xl mt-2">
+                        Ediciones Exclusivas de Temporada
+                    </h2>
+                </div>
+
+                <a href="#" class="text-matez-gold text-xs hover:underline">
+                    Ver catálogo completo →
+                </a>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- PRODUCTO 1 -->
+                <article class="bg-matez-dark border border-white/5
+                                rounded-xl overflow-hidden">
+
+                    <div class="h-64 bg-[#090706] flex items-center justify-center p-8">
+                        <img src="img/001.jpeg" alt="Matez Origen Bourbon" class="h-full object-contain">
+                    </div>
+
+                    <div class="p-5">
+
+                        <h3 class="font-serif text-lg">
+                            Matez Origen Bourbon
+                        </h3>
+
+                        <p class="text-matez-gold text-xs mt-1">
+                            $45.000
+                        </p>
+
+                        <p class="text-gray-500 text-xs mt-3 leading-5">
+                            Café de especialidad con notas dulces,
+                            chocolate y frutos rojos.
+                        </p>
+
+                        <button class="w-full mt-5 bg-matez-card
+                                   hover:bg-matez-gold py-3 rounded-lg
+                                   text-xs transition">
+                            Añadir al Carrito
+                        </button>
+
+                    </div>
+                </article>
+
+
+                <!-- PRODUCTO 2 -->
+                <article class="bg-matez-dark border border-white/5
+                                rounded-xl overflow-hidden">
+
+                    <div class="h-64 bg-[#090706] flex items-center justify-center p-8">
+                        <img src="img/001.jpeg" alt="Matez Reserva Caturra" class="h-full object-contain">
+                    </div>
+
+                    <div class="p-5">
+
+                        <h3 class="font-serif text-lg">
+                            Matez Reserva Caturra
+                        </h3>
+
+                        <p class="text-matez-gold text-xs mt-1">
+                            $55.000
+                        </p>
+
+                        <p class="text-gray-500 text-xs mt-3 leading-5">
+                            Equilibrado y aromático con notas
+                            de caramelo y chocolate.
+                        </p>
+
+                        <button class="w-full mt-5 bg-matez-card
+                                   hover:bg-matez-gold py-3 rounded-lg
+                                   text-xs transition">
+                            Añadir al Carrito
+                        </button>
+
+                    </div>
+                </article>
+
+
+                <!-- PRODUCTO 3 -->
+                <article class="bg-matez-dark border border-white/5
+                                rounded-xl overflow-hidden">
+
+                    <div class="h-64 bg-[#090706] flex items-center justify-center p-8">
+                        <img src="img/001.jpeg" alt="Matez Tostado Oscuro" class="h-full object-contain">
+                    </div>
+
+                    <div class="p-5">
+
+                        <h3 class="font-serif text-lg">
+                            Matez Tostado Oscuro
+                        </h3>
+
+                        <p class="text-matez-gold text-xs mt-1">
+                            $38.000
+                        </p>
+
+                        <p class="text-gray-500 text-xs mt-3 leading-5">
+                            Intenso y profundo con notas de cacao
+                            y un final prolongado.
+                        </p>
+
+                        <button class="w-full mt-5 bg-matez-card
+                                   hover:bg-matez-gold py-3 rounded-lg
+                                   text-xs transition">
+                            Añadir al Carrito
+                        </button>
+
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= HISTORIA ================= -->
+    <section id="proceso" class="bg-matez-dark py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <img src="img/granocafe.jpeg" alt="Proceso artesanal del café" class="w-full h-[300px] md:h-[420px]
+                               object-cover rounded-lg">
+                </div>
+
+
+                <div>
+
+                    <p class="text-matez-gold text-[10px]
+                              tracking-[0.3em] uppercase">
+                        Del campo a tu taza
+                    </p>
+
+                    <h2 class="font-serif text-3xl md:text-4xl mt-4">
+                        Un Ritual Honrado por Generaciones
+                    </h2>
+
+                    <p class="text-gray-400 text-sm leading-7 mt-6">
+                        El café MATEZ nace de pequeños productores que
+                        mantienen viva una tradición familiar.
+                    </p>
+
+                    <p class="text-gray-400 text-sm leading-7 mt-4">
+                        Cada grano es seleccionado, procesado y tostado
+                        cuidadosamente para conservar todo su carácter,
+                        aroma y sabor.
+                    </p>
+
+                    <a href="#" class="inline-block mt-7 text-matez-gold
+                              text-sm border-b border-matez-gold pb-1">
+                        Conoce nuestro proceso →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="bg-matez-black py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="text-center mb-10">
+
+                <p class="text-matez-gold text-[10px]
+                          tracking-[0.3em] uppercase">
+                    Testimonios
+                </p>
+
+                <h2 class="font-serif text-2xl md:text-3xl mt-3">
+                    Lo que dicen los amantes del buen café
+                </h2>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <div class="bg-matez-dark rounded-lg p-7 border border-white/5">
+
+                    <p class="text-gray-300 text-sm leading-7 italic">
+                        "El Bourbon de Matez tiene un aroma increíble.
+                        Desde el primer sorbo se siente la calidad."
+                    </p>
+
+                    <p class="text-matez-gold text-xs mt-5">
+                        Alejandro R.
+                    </p>
+
+                    <p class="text-gray-600 text-[10px] mt-1">
+                        Cliente MATEZ
+                    </p>
+
+                </div>
+
+
+                <div class="bg-matez-dark rounded-lg p-7 border border-white/5">
+
+                    <p class="text-gray-300 text-sm leading-7 italic">
+                        "Se nota que es un café cuidado desde el campo
+                        hasta que llega a nuestra taza."
+                    </p>
+
+                    <p class="text-matez-gold text-xs mt-5">
+                        Carlos Mendoza
+                    </p>
+
+                    <p class="text-gray-600 text-[10px] mt-1">
+                        Cliente MATEZ
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SUSCRIPCIÓN ================= -->
+    <section class="bg-matez-brown py-20">
+
+        <div class="max-w-3xl mx-auto px-6 text-center">
+
+            <h2 class="font-serif text-3xl md:text-4xl">
+                ¿Listo para cambiar tus mañanas?
+            </h2>
+
+            <p class="text-gray-400 text-sm leading-6 mt-5">
+                Suscríbete para recibir nuestros mejores cafés directamente
+                en tu puerta.
+            </p>
+
+            <a href="#" class="inline-block mt-7 bg-matez-gold
+                      hover:bg-[#b78338] px-8 py-3 rounded-full
+                      text-sm font-semibold transition">
+                Suscríbete Ahora
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-matez-black border-t border-white/5">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- LOGO -->
+                <div class="col-span-2 md:col-span-1">
+
+                    <h3 class="font-serif text-xl tracking-widest">
+                        MATEZ
+                    </h3>
+
+                    <p class="text-gray-500 text-xs leading-6 mt-4">
+                        Café colombiano de especialidad.
+                        Cultivado, seleccionado y tostado
+                        artesanalmente.
+                    </p>
+
+                </div>
+
+
+                <!-- EXPLORA -->
+                <div>
+
+                    <h4 class="text-sm mb-4">
+                        Explora
+                    </h4>
+
+                    <div class="space-y-3 text-xs text-gray-500">
+                        <a href="#" class="block hover:text-matez-gold">
+                            Nuestro Café
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Nosotros
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Café de Especialidad
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- COMPAÑÍA -->
+                <div>
+
+                    <h4 class="text-sm mb-4">
+                        Compañía
+                    </h4>
+
+                    <div class="space-y-3 text-xs text-gray-500">
+                        <a href="#" class="block hover:text-matez-gold">
+                            Nuestra Historia
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Prensa MATEZ
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Contacto
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- SOPORTE -->
+                <div>
+
+                    <h4 class="text-sm mb-4">
+                        Soporte
+                    </h4>
+
+                    <div class="space-y-3 text-xs text-gray-500">
+                        <a href="#" class="block hover:text-matez-gold">
+                            Preguntas Frecuentes
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Envíos & Devoluciones
+                        </a>
+
+                        <a href="#" class="block hover:text-matez-gold">
+                            Política de Privacidad
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COPYRIGHT -->
+            <div class="border-t border-white/5 mt-10 pt-6
+                        flex flex-col sm:flex-row
+                        justify-between gap-3
+                        text-[10px] text-gray-600">
+
+                <p>
+                    © 2026 MATEZ Coffee. Todos los derechos reservados.
+                </p>
+
+                <div class="flex gap-5">
+                    <a href="#" class="hover:text-matez-gold">Instagram</a>
+                    <a href="#" class="hover:text-matez-gold">Facebook</a>
+                    <a href="#" class="hover:text-matez-gold">Twitter</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const boton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu-movil");
+            const icono = document.getElementById("icono-menu");
+
+            if (!boton || !menu) return;
+
+            function alternarMenu() {
+                const abrir = menu.classList.contains("hidden");
+
+                menu.classList.toggle("hidden");
+                boton.setAttribute("aria-expanded", String(abrir));
+                boton.setAttribute(
+                    "aria-label",
+                    abrir ? "Cerrar menú" : "Abrir menú"
+                );
+
+                if (icono) {
+                    icono.innerHTML = abrir
+                        ? '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>'
+                        : '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+                }
+            }
+
+            boton.addEventListener("click", alternarMenu);
+
+            menu.querySelectorAll("a").forEach(function (enlace) {
+                enlace.addEventListener("click", function () {
+                    menu.classList.add("hidden");
+                    boton.setAttribute("aria-expanded", "false");
+                    boton.setAttribute("aria-label", "Abrir menú");
+
+                    if (icono) {
+                        icono.innerHTML =
+                            '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>';
+                    }
+                });
+            });
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth >= 768) {
+                    menu.classList.add("hidden");
+                    boton.setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+            enlace.addEventListener('click', function (e) {
+                const destino = document.querySelector(this.getAttribute('href'));
+
+                if (destino) {
+                    e.preventDefault();
+                    destino.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
